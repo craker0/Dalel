@@ -56,4 +56,10 @@ abstract class CustomTextStyles {
     color: Colors.white,
     fontFamily: "Pacifico",
   );
+  static var loginNow = TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: AppColors.black,
+      decoration: TextDecoration.underline);
 }

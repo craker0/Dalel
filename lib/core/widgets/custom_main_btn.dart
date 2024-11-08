@@ -3,16 +3,20 @@ import 'package:dalel/core/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
 class CustomMainBtn extends StatelessWidget {
-  const CustomMainBtn({super.key, required this.text,});
+  const CustomMainBtn({
+    super.key,
+    required this.text,
+  required  this.onPressed,
+  });
   final String text;
-
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       height: 56,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
             shape:

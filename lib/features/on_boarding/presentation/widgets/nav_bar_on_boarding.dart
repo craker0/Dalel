@@ -1,3 +1,4 @@
+import 'package:dalel/core/funcations/navigate.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +10,15 @@ class NavBarOnBoarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.centerRight,
-        child: Text(
-          AppStrings.skip,
-          style: CustomTextStyles.poppins300style16
-              .copyWith(fontWeight: FontWeight.w400),
+        child: GestureDetector(
+          onTap: () {
+            customReplaceNavigate(context, '/SignIn');
+          },
+          child: Text(
+            AppStrings.skip,
+            style: CustomTextStyles.poppins300style16
+                .copyWith(fontWeight: FontWeight.w400),
+          ),
         ));
   }
 }
