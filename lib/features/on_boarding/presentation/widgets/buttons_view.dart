@@ -1,9 +1,9 @@
-import 'package:dalel/core/database/cache/cache_helper.dart';
 import 'package:dalel/core/funcations/navigate.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_textstyles.dart';
 import 'package:dalel/core/widgets/custom_main_btn.dart';
 import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/funcations/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class ButtonsView extends StatelessWidget {
@@ -20,10 +20,7 @@ class ButtonsView extends StatelessWidget {
               CustomMainBtn(
                   text: AppStrings.createAccount,
                   onPressed: () {
-                    CacheHelper().saveData(
-                      key: "isVisited",
-                      value: true,
-                    );
+                    onBoardingFunc();
                     customReplaceNavigate(context, '/SignUp');
                   }),
               const SizedBox(
@@ -31,10 +28,7 @@ class ButtonsView extends StatelessWidget {
               ),
               TextButton(
                   onPressed: () {
-                    CacheHelper().saveData(
-                      key: "isVisited",
-                      value: true,
-                    );
+                    onBoardingFunc();
                     customReplaceNavigate(context, '/SignIn');
                   },
                   child: Text(AppStrings.loginNow,

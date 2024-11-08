@@ -1,7 +1,7 @@
-import 'package:dalel/core/database/cache/cache_helper.dart';
 import 'package:dalel/core/funcations/navigate.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_textstyles.dart';
+import 'package:dalel/features/on_boarding/funcations/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class NavBarOnBoarding extends StatelessWidget {
@@ -13,10 +13,7 @@ class NavBarOnBoarding extends StatelessWidget {
         alignment: Alignment.centerRight,
         child: GestureDetector(
           onTap: () {
-            CacheHelper().saveData(
-              key: "isVisited",
-              value: true,
-            );
+            onBoardingFunc();
             customReplaceNavigate(context, '/SignIn');
           },
           child: Text(
