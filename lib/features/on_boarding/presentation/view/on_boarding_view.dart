@@ -1,10 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:dalel/core/funcations/navigate.dart';
-import 'package:dalel/core/utils/app_strings.dart';
-import 'package:dalel/core/utils/app_textstyles.dart';
-import 'package:dalel/core/widgets/custom_main_btn.dart';
-import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/presentation/widgets/buttons_view.dart';
 import 'package:dalel/features/on_boarding/presentation/widgets/nav_bar_on_boarding.dart';
 import 'package:dalel/features/on_boarding/presentation/widgets/on_boarding_widget_body.dart';
 import 'package:flutter/material.dart';
@@ -43,33 +39,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 });
               },
             ),
+            ButtonsView(controller: controller, currentPage: currentPage,),
             SizedBox(
               height: 88,
             ),
-            currentPage == onBoardingModel.length - 1
-                ? Column(
-                    children: [
-                      CustomMainBtn(
-                          text: AppStrings.createAccount, onPressed: () {  customReplaceNavigate(context, '/SignUp');}),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      TextButton(
-                          onPressed: () {
-                              customReplaceNavigate(context, '/SignIn');
-                          },
-                          child: Text(AppStrings.loginNow,
-                              style: CustomTextStyles.loginNow))
-                    ],
-                  )
-                : CustomMainBtn(
-                    text: AppStrings.next,
-                    onPressed: () {
-                      controller.nextPage(
-                          duration: Duration(milliseconds: 200),
-                          curve: Curves.bounceIn);
-                    },
-                  ),
+            
             SizedBox(
               height: 17,
             ),
